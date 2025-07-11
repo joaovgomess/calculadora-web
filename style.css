@@ -1,0 +1,37 @@
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Dosis', sans-serif;
+    font-display: swap;
+    background-image: linear-gradient(320deg, #61B593, #4A6D8C,#232F40 );
+    height: inherit;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+/*-------------------------------------------------------------------------------*/
+
+main {
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    background-color: rgba(255, 2555, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 40x rgba(35, 35, 35, 0.1);
+    color: #232323;
+    font-size: 35px;
+    overflow: auto;
+    padding: 20px;
+    text-align: right;
+    width: 326px;
+}
