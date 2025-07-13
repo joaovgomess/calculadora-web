@@ -18,6 +18,66 @@ function cliqueBotao(value) {
     telaCalc.innerText = visor;
 }
 
+
+//função resonsável pelos clique em simbolos em geral
+//caso clicar no 'C', limpa o visor
+//caso clicar no '=', verifica se clicaram em alguma operação. Se sim faz a operação matematica exibindo no visor e zerando o 'totalAcumulado'
+//caso clicar no '←', verifica se o visor tem apenas um digito. Se tiver, mostra 0 no visor, senão, apaga o ultimo digito do visor
+//caso clicar em algum operador matematica, chamamos a função que manipula esses simbolos em especifico
+function manipularSimbolo (simbolo) {
+    switch (simbolo) {
+        case 'C':
+            visor = '0';
+            totalAcumulado = 0;
+            break;
+        
+        case '=':
+            if (!operadorAnterior) {
+                return;
+            }
+            executarOperacao(parseInt(visor));
+            operadorAnterior = null;
+            visor = totalAcumulado.toString();
+            totalAcumulado = 0;
+            break;
+
+        case '←':
+            if (visor.length === 1) {
+                visor = 0;
+            } else {
+                visor = visor.substring(0, visor.length - 1);
+            }
+            break;
+        
+        case '+':
+        case '−':
+        case '×':
+        case '÷':
+            manipularMatematica(simbolo);
+            break;
+    }
+}
+
+//função responsavel pelos cliques nos operadores matematicos
+//se o visor for '0' e um operador for clicado, nada acontece (pra não fazer operação com o 0 inicial sem querer)
+//se o 'totalAcumulado' for 0, significa que é o primeiro número de uma nova operação e o primeiro número se torna o total acumulado
+//se ja tiver um 'totalAcumulado', executa a operação clicado com o valor atual do visor
+function manipularMatematica(simbolo) {
+    if (visor === '0') {
+        return;
+    }
+
+    const valorVisor = parseInt(visor);
+
+    if (totalAcumulado === 0) {
+        totalAcumulado= valorVisor;
+    } else {
+        executarOperacao(valorVisor);
+    }
+    operadorAnterior = simbolo;
+    visor = '0';
+}
+
 //função responsavel pelos cliques em numeros
 //se o visor estiver com '0', vai substituir pelo numero que foi clicado
 //senão, vai concatenar o numero clicado com o numero que ja estava no visor
