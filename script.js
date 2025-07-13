@@ -78,6 +78,20 @@ function manipularMatematica(simbolo) {
     visor = '0';
 }
 
+//função responsavel por realilzar as operações matematicas
+//para os simbolos de subtraão e multiplicação, tive que usar especificamente os 'U+2212' e o 'U+00d7' respectivamente, pois usando os simbolos do teclado, as operações não funcionam (por que??)
+function executarOperacao(valorVisor){
+    if (operadorAnterior === '+') {
+        totalAcumulado += valorVisor;
+    } else if (operadorAnterior === '−') {
+        totalAcumulado -= valorVisor;
+    } else if (operadorAnterior === '×') {
+        totalAcumulado *= valorVisor;
+    } else if (operadorAnterior === '÷') {
+        totalAcumulado /= valorVisor;
+    }
+}
+
 //função responsavel pelos cliques em numeros
 //se o visor estiver com '0', vai substituir pelo numero que foi clicado
 //senão, vai concatenar o numero clicado com o numero que ja estava no visor
