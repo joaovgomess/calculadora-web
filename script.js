@@ -43,7 +43,7 @@ function manipularSimbolo (simbolo) {
 
         case '←':
             if (visor.length === 1) {
-                visor = 0;
+                visor = "0";
             } else {
                 visor = visor.substring(0, visor.length - 1);
             }
