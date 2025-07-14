@@ -111,6 +111,22 @@ main {
     color: inherit;
 }
 
+/*
+- Esse media query foi necessario pois em dispositivos touch
+- Ao clicar no botao, a formatação de hover estava ficando ativa até que houvesse outro toque na tela
+- Para resolver isso, fiz esse media query que verifica se o dispositivo suporta o hover (dispositivos touch não suportam
+- Se suporta, a media query n faz nada. Se não suportar, deixamos o hover inativo (ao clicar no botao, não vai fazer o hover apenas o active)
+*/
+@media (hover: hover) and (pointer: fine) {
+    .botao:hover {
+        background-color: inherit;
+    }
+    .botao:last-child:hover {
+        background-color: inherit;
+        color: inherit;
+    }
+}
+
 .duplo {
     flex-basis: 47%;
 }
