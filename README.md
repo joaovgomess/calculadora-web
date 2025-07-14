@@ -1,6 +1,8 @@
 # 🧮 Calculadora Web
 
-Este é um projeto pessoal desenvolvido com foco em praticar e relembrar os fundamentos do desenvolvimento web utilizando **HTML**, **CSS** e **JavaScript** puro. A ideia foi criar uma aplicação simples, funcional e agradável visualmente, que reforçasse boas práticas tanto no código quanto no design.
+Este é um projeto pessoal desenvolvido com foco em praticar e relembrar os fundamentos do desenvolvimento web utilizando **HTML**, **CSS** e **JavaScript** puro. A ideia foi criar uma aplicação simples, funcional e agradável visualmente, que reforçasse boas práticas tanto no código quanto no design.  
+  
+[Clique aqui](https://joaovgomess.github.io/calculadora-web/) para acessar o site!
 
 ## 🎯 Objetivo do Projeto
 
